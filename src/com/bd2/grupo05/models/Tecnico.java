@@ -12,19 +12,21 @@ import javax.persistence.SequenceGenerator;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder
-public class Fruteira implements Serializable {
+public class Tecnico implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO, generator = "s_Fruteira")
-	@SequenceGenerator(name = "s_Fruteira", sequenceName = "s_Fruteira", allocationSize = 1)
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "seq_tecnico")
+	@SequenceGenerator(name = "seq_tecnico", sequenceName = "seq_tecnico", allocationSize = 1)
 	private Long id;
-	
+
 	@Column(length = 50, nullable = false)
 	private String nome;
 }
