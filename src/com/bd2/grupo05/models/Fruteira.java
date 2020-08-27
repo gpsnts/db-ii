@@ -9,7 +9,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+
 @Entity
+@Data
+@AllArgsConstructor
+@Builder
 public class Fruteira implements Serializable {
 	private static final long serialVersionUID = 1L;
 
