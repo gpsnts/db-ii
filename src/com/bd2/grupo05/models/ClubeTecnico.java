@@ -2,6 +2,7 @@ package com.bd2.grupo05.models;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
@@ -30,6 +31,7 @@ public class ClubeTecnico implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO, generator = "seq_clubeTecnico")
 	@SequenceGenerator(name = "seq_clubeTecnico", sequenceName = "seq_clubeTecnico", allocationSize = 1)
+	@Column(name = "id_clubeTecnico", length = 50, nullable = false)
 	private Long id;
 
 	@ManyToOne(optional = false)

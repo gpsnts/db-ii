@@ -25,6 +25,7 @@ public class Tecnico implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO, generator = "seq_tecnico")
 	@SequenceGenerator(name = "seq_tecnico", sequenceName = "seq_tecnico", allocationSize = 1)
+	@Column(name = "id_tecnico", length = 50, nullable = false)
 	private Long id;
 
 	@Column(length = 50, nullable = false)

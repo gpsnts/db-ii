@@ -26,6 +26,7 @@ public class Clube implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO, generator = "seq_clube")
 	@SequenceGenerator(name = "seq_clube", sequenceName = "seq_clube", allocationSize = 1)
+	@Column(name = "id_clube", length = 50, nullable = false)
 	private Long id;
 
 	@Column(length = 50, nullable = false)

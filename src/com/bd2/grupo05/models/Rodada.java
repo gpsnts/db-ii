@@ -22,19 +22,31 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Jogador implements Serializable {
+public class Rodada implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO, generator = "seq_jogador")
-	@SequenceGenerator(name = "seq_jogador", sequenceName = "seq_jogador", allocationSize = 1)
-	@Column(name = "id_jogador", length = 50)
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "seq_rodada")
+	@SequenceGenerator(name = "seq_rodada", sequenceName = "seq_rodada", allocationSize = 1)
+	@Column(name = "id_rodada", length = 50, nullable = false)
 	private Long id;
 
-	@Column(length = 50, nullable = false)
-	private String nome;
+	@Builder.Default
+	@Column(length = 2)
+	private Integer totalJogos = 0;
+
+	@Builder.Default
+	@Column(length = 3)
+	private Integer totalAmarelos = 0;
+
+	@Builder.Default
+	@Column(length = 3)
+	private Integer totalVermelhos = 0;
+
+	@Column(length = 3)
+	private Integer totalGols;
 
 	@ManyToOne(optional = false)
-	@JoinColumn(name = "id_posicao", foreignKey = @ForeignKey(name = "fk_jogador_posicao"))
-	private Posicao posicao;
+	@JoinColumn(name = "id_campeonato", foreignKey = @ForeignKey(name = "fk_rodada_campeonato"))
+	private Campeonato campeonato;
 }

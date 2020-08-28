@@ -7,11 +7,16 @@
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
 		<!-- Model -->
+		<class>com.bd2.grupo05.models.Campeonato</class>
+		<class>com.bd2.grupo05.models.ClassificacaoRodada</class>
 		<class>com.bd2.grupo05.models.Clube</class>
-		<class>com.bd2.grupo05.models.Tecnico</class>
+		<class>com.bd2.grupo05.models.ClubeJogador</class>
 		<class>com.bd2.grupo05.models.ClubeTecnico</class>
 		<class>com.bd2.grupo05.models.Jogador</class>
-		<class>com.bd2.grupo05.models.ClubeJogador</class>
+		<class>com.bd2.grupo05.models.Jogo</class>
+		<class>com.bd2.grupo05.models.Posicao</class>
+		<class>com.bd2.grupo05.models.Rodada</class>
+		<class>com.bd2.grupo05.models.Tecnico</class>
 
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 		<properties>
