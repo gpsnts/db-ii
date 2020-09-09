@@ -5,4 +5,4 @@ Para ficar mais fácil e prático para o professor e o grupo usar o banco de dad
 * **USERNAME/DATABASE**: jwsixlol
 * **PASSWORD**: wapH1cpzjJ8xZT5SQQf8TWjVAt7GI2zX
 
-[Link para o repositório no Github][https://github.com/gpsnts/db-ii]
+[Link para o repositório no Github](https://github.com/gpsnts/db-ii)
