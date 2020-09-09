@@ -6,3 +6,9 @@ Para ficar mais fácil e prático para o professor e o grupo usar o banco de dad
 * **PASSWORD**: wapH1cpzjJ8xZT5SQQf8TWjVAt7GI2zX
 
 [Link para o repositório no Github](https://github.com/gpsnts/db-ii)
+
+# Integrantes
+* Gabriel Porto
+* Guilherme Schoenell
+* Júlia Ponticelli
+* Lucas Souza Dias
