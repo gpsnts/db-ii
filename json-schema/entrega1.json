@@ -1,0 +1,84 @@
+{
+  "$id": "https://www.moodle.unisinos.br/pluginfile.php/365956/mod_resource/content/1/movies.json",
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "description": "JSON-Schema (movies.json)",
+  "title": "Movie",
+  "type": "object",
+  "properties": {
+    "budget": {
+      "type": "number"
+    },
+    "genres": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+           "type": "string"
+          }
+        }
+      }
+    },
+    "id": {
+      "type": "integer"
+    },
+    "keywords": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "original_language": {
+      "type": "string"
+    },
+    "original_title": {
+      "type": "string"
+    },
+    "popularity": {
+      "type": "number"
+    },
+    "release_data": {
+      "type": "string"
+    },
+    "revenue": {
+      "type": "number"
+    },
+    "runtime": {
+      "type": "integer"
+    },
+    "spoken_languages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "iso_639_1": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "status": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "vote_average": {
+      "type": "number"
+    },
+    "vote_count": {
+      "type": "integer"
+    }
+  }
+} 

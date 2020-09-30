@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<campeonato id="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="./schema.xsd">
+    
+    <nome>campeonato1</nome>
+    <ano>2020</ano>
+    <nroClubes>3</nroClubes>
+    
+    <!-- RODADAS -->
+    <rodada id="1">
+        <totalJogos>1</totalJogos>
+        <totalAmarelos>1</totalAmarelos>
+        <totalVermelhos>1</totalVermelhos>
+        <totalGols>3</totalGols>
+        
+        <!-- JOGOS -->
+        <jogo id="1">
+            <clube1>1</clube1>
+            <clube2>2</clube2>
+            <clube1Gol>1</clube1Gol>
+            <clube2Gol>2</clube2Gol>
+            <clube1Amarelo>0</clube1Amarelo>
+            <clube2Amarelo>1</clube2Amarelo>
+            <clube1Vermelho>1</clube1Vermelho>
+            <clube2Vermelho>0</clube2Vermelho>
+            <clube1Ponto>2</clube1Ponto>
+            <clube2Ponto>4</clube2Ponto>
+        </jogo>
+        
+        <!-- CLASSIFICAÇÕES -->
+        <classificacaoRodada id="1">
+            <clube>1</clube>
+            <posicao>2</posicao>
+            <totalPontos>2</totalPontos>
+            <totalVitorias>0</totalVitorias>
+            <totalEmpates>0</totalEmpates>
+            <totalDerrotas>1</totalDerrotas>
+            <totalGolsPro>1</totalGolsPro>
+            <totalGolsContra>0</totalGolsContra>
+        </classificacaoRodada>
+        
+        <classificacaoRodada id="2">
+            <clube>2</clube>
+            <posicao>1</posicao>
+            <totalPontos>4</totalPontos>
+            <totalVitorias>1</totalVitorias>
+            <totalEmpates>0</totalEmpates>
+            <totalDerrotas>0</totalDerrotas>
+            <totalGolsPro>2</totalGolsPro>
+            <totalGolsContra>0</totalGolsContra>
+        </classificacaoRodada>
+        
+        <classificacaoRodada id="3">
+            <clube>3</clube>
+            <posicao>3</posicao>
+            <totalPontos>0</totalPontos>
+            <totalVitorias>0</totalVitorias>
+            <totalEmpates>0</totalEmpates>
+            <totalDerrotas>0</totalDerrotas>
+            <totalGolsPro>0</totalGolsPro>
+            <totalGolsContra>0</totalGolsContra>
+        </classificacaoRodada>
+    </rodada>
+    
+    <rodada id="2">
+        <totalJogos>2</totalJogos>
+        <totalAmarelos>2</totalAmarelos>
+        <totalVermelhos>3</totalVermelhos>
+        <totalGols>4</totalGols>
+        
+        <!-- JOGOS -->
+        <jogo id="2">
+            <clube1>1</clube1>
+            <clube2>3</clube2>
+            <clube1Gol>2</clube1Gol>
+            <clube2Gol>3</clube2Gol>
+            <clube1Amarelo>0</clube1Amarelo>
+            <clube2Amarelo>0</clube2Amarelo>
+            <clube1Vermelho>0</clube1Vermelho>
+            <clube2Vermelho>0</clube2Vermelho>
+            <clube1Ponto>4</clube1Ponto>
+            <clube2Ponto>6</clube2Ponto>
+        </jogo>
+        
+        <jogo id="3">
+            <clube1>2</clube1>
+            <clube2>3</clube2>
+            <clube1Gol>0</clube1Gol>
+            <clube2Gol>3</clube2Gol>
+            <clube1Amarelo>0</clube1Amarelo>
+            <clube2Amarelo>0</clube2Amarelo>
+            <clube1Vermelho>0</clube1Vermelho>
+            <clube2Vermelho>0</clube2Vermelho>
+            <clube1Ponto>0</clube1Ponto>
+            <clube2Ponto>6</clube2Ponto>
+        </jogo>
+        
+        <!-- CLASSIFICAÇÕES -->
+        <classificacaoRodada id="4">
+            <clube>1</clube>
+            <posicao>2</posicao>
+            <totalPontos>6</totalPontos>
+            <totalVitorias>0</totalVitorias>
+            <totalEmpates>0</totalEmpates>
+            <totalDerrotas>2</totalDerrotas>
+            <totalGolsPro>3</totalGolsPro>
+            <totalGolsContra>0</totalGolsContra>
+        </classificacaoRodada>
+        
+        <classificacaoRodada id="5">
+            <clube>2</clube>
+            <posicao>3</posicao>
+            <totalPontos>4</totalPontos>
+            <totalVitorias>1</totalVitorias>
+            <totalEmpates>0</totalEmpates>
+            <totalDerrotas>1</totalDerrotas>
+            <totalGolsPro>2</totalGolsPro>
+            <totalGolsContra>0</totalGolsContra>
+        </classificacaoRodada>
+        
+        <classificacaoRodada id="6">
+            <clube>3</clube>
+            <posicao>1</posicao>
+            <totalPontos>12</totalPontos>
+            <totalVitorias>2</totalVitorias>
+            <totalEmpates>0</totalEmpates>
+            <totalDerrotas>0</totalDerrotas>
+            <totalGolsPro>6</totalGolsPro>
+            <totalGolsContra>0</totalGolsContra>
+        </classificacaoRodada>
+    </rodada>
+    
+    <!-- CLUBES -->
+    <clube id="1">
+        <nome>clube1</nome>
+        <dtFundacao>2000-01-01</dtFundacao>
+        
+        <!-- JOGADORES -->
+        <jogador>1</jogador>
+        <jogador>2</jogador>
+        <jogador>3</jogador>
+        <jogador>4</jogador>
+        <jogador>5</jogador>
+        <jogador>6</jogador>
+        
+        <!-- TÉCNICOS -->
+        <tecnico>1</tecnico>
+        <tecnico>2</tecnico>
+    </clube>
+    
+    <clube id="2">
+        <nome>clube2</nome>
+        <dtFundacao>2000-01-01</dtFundacao>
+        
+        <!-- JOGADORES -->
+        <jogador>4</jogador>
+        <jogador>5</jogador>
+        <jogador>6</jogador>
+        <jogador>7</jogador>
+        <jogador>8</jogador>
+        <jogador>9</jogador>
+        
+        <!-- TÉCNICOS -->
+        <tecnico>1</tecnico>
+        <tecnico>3</tecnico>
+    </clube>
+    
+    <clube id="3">
+        <nome>clube3</nome>
+        <dtFundacao>2000-01-01</dtFundacao>
+        
+        <!-- JOGADORES -->
+        <jogador>7</jogador>
+        <jogador>8</jogador>
+        <jogador>9</jogador>
+        <jogador>10</jogador>
+        <jogador>11</jogador>
+        <jogador>12</jogador>
+        
+        <!-- TÉCNICOS -->
+        <tecnico>3</tecnico>
+    </clube>
+    
+    <!-- TÉCNICOS -->
+    <tecnico id="1">
+        <nome>tecnico1</nome>
+    </tecnico>
+    
+    <tecnico id="2">
+        <nome>tecnico2</nome>
+    </tecnico>
+    
+    <tecnico id="3">
+        <nome>tecnico3</nome>
+    </tecnico>
+    
+    <!-- POSIÇÕES -->
+    <posicao id="1">
+        <nome>posicao1</nome>
+        
+        <!-- JOGADORES -->      
+        <jogador id="1">
+            <nome>jogador1</nome>
+        </jogador>
+        
+        <jogador id="2">
+            <nome>jogador2</nome>
+        </jogador>
+    </posicao>
+    
+    <posicao id="2">
+        <nome>posicao2</nome>
+        
+        <!-- JOGADORES -->   
+        <jogador id="3">
+            <nome>jogador3</nome>
+        </jogador>
+        
+        <jogador id="4">
+            <nome>jogador4</nome>
+        </jogador>
+        
+        <jogador id="5">
+            <nome>jogador5</nome>
+        </jogador>
+        
+        <jogador id="6">
+            <nome>jogador6</nome>
+        </jogador>
+    </posicao>
+    
+    <posicao id="3">
+        <nome>posicao3</nome>
+        
+        <!-- JOGADORES -->   
+        <jogador id="7">
+            <nome>jogador7</nome>
+        </jogador>
+        
+        <jogador id="8">
+            <nome>jogador8</nome>
+        </jogador>
+        
+        <jogador id="9">
+            <nome>jogador9</nome>
+        </jogador>
+        
+        <jogador id="10">
+            <nome>jogador10</nome>
+        </jogador>
+    </posicao>
+    
+    <posicao id="4">
+        <nome>posicao4</nome>
+        
+        <!-- JOGADORES -->   
+        <jogador id="11">
+            <nome>jogador11</nome>
+        </jogador>
+        
+        <jogador id="12">
+            <nome>jogador12</nome>
+        </jogador>
+    </posicao>
+    
+</campeonato>

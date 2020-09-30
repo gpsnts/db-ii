@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    
+    <xs:element name="campeonato">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="nome" type="xs:string"/>
+                <xs:element name="ano" type="xs:nonNegativeInteger"/>
+                <xs:element name="nroClubes" type="xs:nonNegativeInteger"/>
+                <xs:element ref="rodada" maxOccurs="unbounded"/>
+                <xs:element ref="clube" maxOccurs="unbounded"/>
+                <xs:element ref="tecnico" maxOccurs="unbounded"/>
+                <xs:element ref="posicao" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="id" type="xs:positiveInteger" use="required"/>
+        </xs:complexType>
+        
+        <!-- PK -->
+        <xs:key name="rodadaKey">
+            <xs:selector xpath="rodada"/>
+            <xs:field xpath="@id"/>
+        </xs:key>
+        <xs:key name="classificacaoRodadaKey">
+            <xs:selector xpath="rodada/classificacaoRodada"/>
+            <xs:field xpath="@id"/>
+        </xs:key>
+        <xs:key name="tecnicoKey">
+            <xs:selector xpath="tecnico"/>
+            <xs:field xpath="@id"/>
+        </xs:key>
+        <xs:key name="clubeKey">
+            <xs:selector xpath="clube"/>
+            <xs:field xpath="@id"/>
+        </xs:key>
+        <xs:key name="posicaoKey">
+            <xs:selector xpath="posicao"/>
+            <xs:field xpath="@id"/>
+        </xs:key>
+        <xs:key name="jogadorKey">
+            <xs:selector xpath="posicao/jogador"/>
+            <xs:field xpath="@id"/>
+        </xs:key>
+        <xs:key name="jogoKey">
+            <xs:selector xpath="rodada/jogo"/>
+            <xs:field xpath="@id"/>
+        </xs:key>
+        
+        
+        <!-- FK -->
+        <xs:keyref name="clubeJogadorFK" refer="jogadorKey">
+            <xs:selector xpath="clube/jogador"/>
+            <xs:field xpath="."/>
+        </xs:keyref>
+        <xs:keyref name="clubeTecnicoFK" refer="tecnicoKey">
+            <xs:selector xpath="clube/tecnico"/>
+            <xs:field xpath="."/>
+        </xs:keyref>
+        <xs:keyref name="classificacaRodadaClubeFK" refer="clubeKey">
+            <xs:selector xpath="rodada/classificacaoRodada"/>
+            <xs:field xpath="clube"/>
+        </xs:keyref>
+        <xs:keyref name="jogoClube1FK" refer="clubeKey">
+            <xs:selector xpath="rodada/jogo"/>
+            <xs:field xpath="clube1"/>
+        </xs:keyref>
+        <xs:keyref name="jogoClube2FK" refer="clubeKey">
+            <xs:selector xpath="rodada/jogo"/>
+            <xs:field xpath="clube2"/>
+        </xs:keyref>
+    </xs:element>
+    
+    <xs:element name="rodada">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="totalJogos" type="xs:nonNegativeInteger"/>
+                <xs:element name="totalAmarelos" type="xs:nonNegativeInteger"/>
+                <xs:element name="totalVermelhos" type="xs:nonNegativeInteger"/>
+                <xs:element name="totalGols" type="xs:nonNegativeInteger"/>
+                <xs:element ref="jogo" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="classificacaoRodada" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="id" type="xs:positiveInteger" use="required"/>
+        </xs:complexType>
+        <!-- UK -->
+        <xs:key name="classificacaRodadaClubeUniqueKey">
+            <xs:selector xpath="classificacaoRodada"/>
+            <xs:field xpath="clube"/>
+        </xs:key>
+    </xs:element>
+    
+    <xs:element name="clube">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="nome" type="xs:string"/>
+                <xs:element name="dtFundacao" type="xs:date"/>
+                <xs:element name="jogador" type="xs:positiveInteger" maxOccurs="unbounded"/>
+                <xs:element name="tecnico" type="xs:positiveInteger" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="id" type="xs:positiveInteger" use="required"/>
+        </xs:complexType>
+        <!-- UK -->
+        <xs:key name="clubeJogadorUniqueKey">
+            <xs:selector xpath="jogador"/>
+            <xs:field xpath="."/>
+        </xs:key>
+        <xs:key name="clubeTecnicoUniqueKey">
+            <xs:selector xpath="tecnico"/>
+            <xs:field xpath="."/>
+        </xs:key>
+    </xs:element>
+    
+    <xs:element name="jogo">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="clube1" type="xs:positiveInteger"/>
+                <xs:element name="clube2" type="xs:positiveInteger"/>
+                <xs:element name="clube1Gol" type="xs:nonNegativeInteger"/>
+                <xs:element name="clube2Gol" type="xs:nonNegativeInteger"/>
+                <xs:element name="clube1Amarelo" type="xs:nonNegativeInteger"/>
+                <xs:element name="clube2Amarelo" type="xs:nonNegativeInteger"/>
+                <xs:element name="clube1Vermelho" type="xs:nonNegativeInteger"/>
+                <xs:element name="clube2Vermelho" type="xs:nonNegativeInteger"/>
+                <xs:element name="clube1Ponto" type="xs:nonNegativeInteger"/>
+                <xs:element name="clube2Ponto" type="xs:nonNegativeInteger"/>
+            </xs:sequence>
+            <xs:attribute name="id" type="xs:positiveInteger" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="classificacaoRodada">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="clube" type="xs:positiveInteger"/>
+                <xs:element name="posicao" type="xs:positiveInteger"/>
+                <xs:element name="totalPontos" type="xs:nonNegativeInteger"/>
+                <xs:element name="totalVitorias" type="xs:nonNegativeInteger"/>
+                <xs:element name="totalEmpates" type="xs:nonNegativeInteger"/>
+                <xs:element name="totalDerrotas" type="xs:nonNegativeInteger"/>
+                <xs:element name="totalGolsPro" type="xs:nonNegativeInteger"/>
+                <xs:element name="totalGolsContra" type="xs:nonNegativeInteger"/>
+            </xs:sequence>
+            <xs:attribute name="id" type="xs:positiveInteger" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="tecnico">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="nome" type="xs:string"/>
+            </xs:sequence>
+            <xs:attribute name="id" type="xs:positiveInteger" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="posicao">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="nome" type="xs:string"/>
+                <xs:element ref="jogador" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="id" type="xs:positiveInteger" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="jogador">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="nome" type="xs:string"/>
+            </xs:sequence>
+            <xs:attribute name="id" type="xs:positiveInteger" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    
+</xs:schema>
