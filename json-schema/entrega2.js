@@ -16,3 +16,11 @@ db.collection.aggregate([
 ])
 
 // b)
+db.collection.aggregate([
+  {
+    $unwind: "$genres"
+  },
+  {
+    $sortByCount: "$genres.name"
+  }
+])
